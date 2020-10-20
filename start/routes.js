@@ -22,9 +22,10 @@ const Route = use('Route')
 
 //ROTAS DE USUARIOS
 
-Route.post('/register', 'AuthController.register')
-Route.post('/login', 'AuthController.login')
-
-
+Route.post('/user/register', 'AuthController.register')
+Route.post('/user/login', 'AuthController.login')
+Route.get('/user/logout','AuthController.logout')
+Route.get('/user/me', 'AuthController.me')
+Route.get('/user/livros', 'AuthController.getLivros')
 // ROTAS DE LIVROS
 Route.resource('book','LivroController').apiOnly().middleware('auth')
